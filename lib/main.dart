@@ -24,13 +24,13 @@ class TodoListState extends State<TodoList> {
       appBar: AppBar(title: const Text('ToDo List')),
       body: ListView(children: getItems()),
       floatingActionButton: FloatingActionButton(
-          onPressed: () => _displayDialog(context),
+          onPressed: () => displayDialog(context),
           tooltip: 'Adicionar tarefa',
           child: Icon(Icons.add)),
     );
   }
 
-  void _addTodoItem(String title) {
+  void addTodoItem(String title) {
     setState(() {
       todoList.add(title);
     });
@@ -41,7 +41,7 @@ class TodoListState extends State<TodoList> {
     return ListTile(title: Text(title));
   }
 
-  Future<Future> _displayDialog(BuildContext context) async {
+  Future<Future> displayDialog(BuildContext context) async {
     return showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -56,7 +56,7 @@ class TodoListState extends State<TodoList> {
                 child: const Text('Adicionar'),
                 onPressed: () {
                   Navigator.of(context).pop();
-                  _addTodoItem(textFieldController.text);
+                  addTodoItem(textFieldController.text);
                 },
               ),
               TextButton(
