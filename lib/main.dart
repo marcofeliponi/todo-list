@@ -19,12 +19,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
-            textTheme: GoogleFonts.nunitoSansTextTheme(
-          Theme.of(context).textTheme,
-        )),
-        home: Homepage()
-    );
+          textTheme: GoogleFonts.nunitoSansTextTheme(
+            Theme.of(context).textTheme,
+          ),
+        ),
+        home: Homepage());
   }
 }
